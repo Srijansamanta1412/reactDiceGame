@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.your-class-to-remove{
+  background-color: black !important;
+  color: white !important;
+}
+
+.box-design:hover{
+  background-color: black ;
+  color: white ;
+}

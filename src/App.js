@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React,{useState} from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import { StartGamePage } from './startGame';
+import { GamePage } from './gamePage';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  const [showPage, toggleShowPage] = useState(true);
 
+  function showGamePage() {
+    if (showPage)
+      toggleShowPage(false);
+    else
+      toggleShowPage(true);
+    console.log(showPage)
+  }
+  return (
+    <>
+    {showPage == true? <StartGamePage showGamePage={showGamePage}></StartGamePage>: <GamePage></GamePage> }
+      {/*<StartGamePage showGamePage={showGamePage}></StartGamePage>
+      <GamePage></GamePage>*/}
+    </>
+  )
+}
 export default App;
+
